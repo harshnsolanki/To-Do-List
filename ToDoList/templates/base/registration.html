@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<header class="header-bar" style="justify-content: center;">
+    <h1>Registration</h1>
+</header>
+
+<div class="card-body">
+    <form method="post">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <p><label>{{form.username.label}}</label>
+            {{form.username}}
+        </p>
+
+        <p><label>{{form.password1.label}}</label>
+            {{form.password1}}
+        </p>
+
+        <p>
+            <label>{{form.password2.label}}</label>
+            {{form.password2}}
+        </p>
+        <input style="margin: 10px 0px;" type="submit" value="Register">
+    </form>
+</div>
+
+{% endblock content %}
